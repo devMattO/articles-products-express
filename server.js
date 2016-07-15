@@ -10,7 +10,15 @@ app.set('views', './templates');
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( {extended:true} ) );
 
-app.get('/products', products.get);
+console.log(products,'<----products');
+
+app.get('/products', (req,res)=>{
+  res.render('products/index', {
+    products: products.productsArr
+  });
+});
+
+// app.get('/products', products.get);
 app.post('/products', products.post);
 app.put('/products/:id', products.put);
 app.delete('/products/:id', products.delete);

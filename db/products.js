@@ -1,7 +1,7 @@
 module.exports = (function(){
 
-var productsArr = [];
-var uniqueId = 0;
+var _productsArr = [];
+var _uniqueId = 0;
 
 function _get(req,res){
   productsArr.push(req.body);
@@ -9,7 +9,7 @@ function _get(req,res){
 }
 
 function _post(req,res){
-  req.body.id = uniqueId++;
+  req.body.id = _uniqueId++;
   productsArr.push(req.body);
   res.send({'success': true});
 }
@@ -41,10 +41,12 @@ function _delete(req,res){
 
 
   return {
+    productsArr : _productsArr,
+    uniqueId : _uniqueId,
     get: _get,
     post: _post,
     put: _put,
     delete: _delete
-
   };
+
 })();
