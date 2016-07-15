@@ -4,4 +4,12 @@ html(lang="en")
     meta(charset="UTF-8")
     title Products
   body
-    h1 helllloooooo
+    h1 Products
+    ul
+      each val,index in products
+        li= 'Name: ' + val.name
+        li= 'Price: $' + val.price
+        li= 'Inventory: ' + val.inventory
+        li= 'Id: ' + val.id
+        li
+

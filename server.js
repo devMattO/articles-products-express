@@ -10,7 +10,6 @@ app.set('views', './templates');
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( {extended:true} ) );
 
-console.log(products,'<----products');
 
 app.get('/products', (req,res)=>{
   res.render('products/index', {
@@ -18,11 +17,14 @@ app.get('/products', (req,res)=>{
   });
 });
 
+app.get('/products', (req,res)=>{
+
+});
+
 // app.get('/products', products.get);
 app.post('/products', products.post);
 app.put('/products/:id', products.put);
 app.delete('/products/:id', products.delete);
-
 
 const server = app.listen( 3000, () => {
   let host = server.address().address;
