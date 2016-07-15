@@ -1,0 +1,30 @@
+{
+  "name": "articles-products-express",
+  "version": "1.0.0",
+  "description": "## Goal Build a mock application which will have 2 resources: Products and Articles. Each resource will have an implementation of **CRUD** (create, read, update, delete). You should make use of Express' **Router** module to keep your code organized. Routes go in a directory called **routes**.",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha -w test/server.spec.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devMattO/articles-products-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devMattO/articles-products-express/issues"
+  },
+  "homepage": "https://github.com/devMattO/articles-products-express#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  }
+}
