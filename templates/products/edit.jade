@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Document
+  body
+    h1 Edit Some Shit!
+    form(method="POST", action="/products/#{itemId.id}")
+      div.input
+        span.label Name
+        input(name="name" value="#{itemId.name}")
+      div.input
+        span.label Price $
+        input(name="price" value="#{itemId.price}")
+      div.input
+        span.label Inventory
+        input(name="inventory" value="#{itemId.inventory}")
+        input(type="hidden" name="id" value="#{itemId.id}")
+        input(type="hidden" name="_method" value="PUT")
+      div.actions
+        input(type="submit" value="Submit")

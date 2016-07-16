@@ -6,10 +6,10 @@ html(lang="en")
   body
     h1 Products
     ul
-      each val,index in products
-        li= 'Name: ' + val.name
-        li= 'Price: $' + val.price
-        li= 'Inventory: ' + val.inventory
-        li= 'Id: ' + val.id
+      each product in products
+        li Name: #{product.name}
+        li Price: $#{product.price}
+        li Inventory: #{product.inventory}
+        li Id: #{product.id}
         li
 

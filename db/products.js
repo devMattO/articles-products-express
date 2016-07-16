@@ -12,7 +12,7 @@ function _post(req,res){
   req.body.id = _uniqueId++;
   _productsArr.push(req.body);
   console.log(req.body,'<----req.body');
-  res.send({'success': true});
+  res.send({'success': true}); // add a path to go to after posting
 }
 
 function _put(req,res){
@@ -29,7 +29,6 @@ function _put(req,res){
 }
 
 function _delete(req,res){
-  console.log(parseFloat(req.params.id),'<----req.params');
   for (var i = 0; i < _productsArr.length; i++) {
     if(parseFloat(req.params.id)===_productsArr[i].id){
       _productsArr.splice(i,1);
@@ -40,6 +39,15 @@ function _delete(req,res){
   res.send({'success': false});
 }
 
+//return one item in arr
+function _itemById(req,res){
+  for (var j = 0; j < _productsArr.length; j++) {
+    if(parseFloat(req.params.id)===_productsArr[j].id){
+      return _productsArr[j];
+    }
+
+  }
+}
 
   return {
     productsArr : _productsArr,
@@ -47,7 +55,8 @@ function _delete(req,res){
     // get: _get,
     post: _post,
     put: _put,
-    delete: _delete
+    delete: _delete,
+    itemById: _itemById
   };
 
 })();
