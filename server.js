@@ -2,8 +2,8 @@ const express = require( 'express' );
 const bodyParser = require( 'body-parser' );
 const app = express();
 const products = require('./db/products');
-const methodOverride = require('method-override');
 const articleRoute = require('./routes/articles');
+const methodOverride = require('method-override');
 
 app.set('view engine','jade');
 app.set('views', './templates');
@@ -44,6 +44,8 @@ app.put('/products/:id', products.put);
 app.delete('/products/:id', products.delete);
 
 app.use('/articles', articleRoute);
+
+
 
 const server = app.listen( 3000, () => {
   let host = server.address().address;
