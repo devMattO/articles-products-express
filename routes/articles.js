@@ -42,4 +42,8 @@ Router.get('/:title/edit', (req,res)=>{
   });
 });
 
+Router.get('/new', (req,res)=>{
+   res.render('articles/new');
+});
+
 module.exports = Router;

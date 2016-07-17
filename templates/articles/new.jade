@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Add New Article
+  body
+    h1 Add New Article, yo!
+    form(method="POST", action="/articles/")
+      div.input
+        span.label Title
+        input(type="text", name="title", placeholder="Harry Potter")
+      div.input
+        span.label Body
+        input(type="text", name="body", placeholder="About some magic")
+      div.input
+        span.label Author
+        input(type="text", name="author", placeholder="J.K. Rowling")
+      div.actions
+        input(type="submit", value="Submit")

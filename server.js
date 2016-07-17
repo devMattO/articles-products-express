@@ -1,7 +1,7 @@
 const express = require( 'express' );
 const bodyParser = require( 'body-parser' );
 const app = express();
-const products = require('./db/products');
+const productRoute = require('./routes/products');
 const articleRoute = require('./routes/articles');
 const methodOverride = require('method-override');
 
@@ -20,31 +20,8 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-app.get('/products', (req,res)=>{
-  res.render('products/index', {
-    products: products.productsArr
-  });
-});
-
-app.get('/products/:id/edit', (req,res)=>{
-  var itemVar = products.itemById(req,res);
-  res.render('products/edit', {
-    itemId: itemVar
-  });
-});
-
-app.get('/products/new', (req,res)=>{
-  res.render('products/new', {
-  });
-});
-
-// app.get('/products', products.get);
-app.post('/products', products.post);
-app.put('/products/:id', products.put);
-app.delete('/products/:id', products.delete);
-
+app.use('/products', productRoute);
 app.use('/articles', articleRoute);
-
 
 
 const server = app.listen( 3000, () => {
