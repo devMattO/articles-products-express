@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Edit Form
+  body
+    h1 Edit Some Shit!
+    form(method="POST", action="/articles/#{articles.urlTitle}")
+      div.input
+        span.label Title
+        input(name="title" value="#{articles.title}")
+      div.input
+        span.label Body
+        input(name="body" value="#{articles.body}")
+      div.input
+        span.label Author
+        input(name="author" value="#{articles.author}")
+        input(type="hidden" name="id" value="#{articles.id}")
+        input(type="hidden" name="_method" value="PUT")
+      div.actions
+        input(type="submit" value="Submit")

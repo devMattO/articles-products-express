@@ -33,5 +33,13 @@ Router.get('/', (req,res)=>{
   });
 });
 
+Router.get('/:title/edit', (req,res)=>{
+  articleModel.all((err,data)=>{
+    if (err) {res.status(500).send(data);}
+    return res.render('articles/edit', {
+      articles: data
+    });
+  });
+});
 
 module.exports = Router;
